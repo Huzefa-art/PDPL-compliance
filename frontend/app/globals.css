@@ -4,8 +4,9 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: rgba(255, 255, 255, 0.08);
   }
+
   body {
     @apply bg-slate-950 text-slate-100;
   }
@@ -15,52 +16,142 @@
   .gradient-brand {
     background: linear-gradient(135deg, #4d53e5 0%, #6270f1 50%, #8196f8 100%);
   }
+
   .gradient-dark {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   }
+
   .glass {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
+
   .glass-hover:hover {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(255, 255, 255, 0.14);
   }
+
   .text-gradient {
     background: linear-gradient(135deg, #a5bbfc, #6270f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
   .glow {
     box-shadow: 0 0 40px rgba(98, 112, 241, 0.25);
   }
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #475569; }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
 
 /* Markdown in documents */
-.prose-dark h1, .prose-dark h2, .prose-dark h3 {
+.prose-dark h1,
+.prose-dark h2,
+.prose-dark h3 {
   color: #e2e8f0;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
-.prose-dark h1 { font-size: 1.4rem; font-weight: 700; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
-.prose-dark h2 { font-size: 1.15rem; font-weight: 600; color: #a5bbfc; }
-.prose-dark h3 { font-size: 1rem; font-weight: 600; }
-.prose-dark p { color: #94a3b8; line-height: 1.7; margin-bottom: 0.75rem; }
-.prose-dark ul, .prose-dark ol { color: #94a3b8; padding-left: 1.5rem; margin-bottom: 0.75rem; }
-.prose-dark li { margin-bottom: 0.25rem; }
-.prose-dark strong { color: #e2e8f0; font-weight: 600; }
-.prose-dark table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
-.prose-dark th { background: #1e293b; color: #a5bbfc; padding: 0.5rem 0.75rem; text-align: left; border: 1px solid #334155; }
-.prose-dark td { color: #94a3b8; padding: 0.5rem 0.75rem; border: 1px solid #1e293b; }
-.prose-dark tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-.prose-dark code { background: #1e293b; color: #a5bbfc; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em; }
-.prose-dark blockquote { border-left: 3px solid #4d53e5; padding-left: 1rem; color: #64748b; }
-.prose-dark hr { border-color: #1e293b; margin: 1.5rem 0; }
+
+.prose-dark h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.5rem;
+}
+
+.prose-dark h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #a5bbfc;
+}
+
+.prose-dark h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.prose-dark p {
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.prose-dark ul,
+.prose-dark ol {
+  color: #94a3b8;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-dark li {
+  margin-bottom: 0.25rem;
+}
+
+.prose-dark strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.prose-dark table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+
+.prose-dark th {
+  background: #1e293b;
+  color: #a5bbfc;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border: 1px solid #334155;
+}
+
+.prose-dark td {
+  color: #94a3b8;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #1e293b;
+}
+
+.prose-dark tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prose-dark code {
+  background: #1e293b;
+  color: #a5bbfc;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.prose-dark blockquote {
+  border-left: 3px solid #4d53e5;
+  padding-left: 1rem;
+  color: #64748b;
+}
+
+.prose-dark hr {
+  border-color: #1e293b;
+  margin: 1.5rem 0;
+}
