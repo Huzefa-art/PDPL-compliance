@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { Shield, FileText, AlertTriangle, MessageSquare, ArrowRight, CheckCircle, Zap } from 'lucide-react'
 
 const FEATURES = [
-  { icon: FileText, title: 'ROPA Generator', desc: 'Auto-generate Record of Processing Activities compliant with PDPL Article 12' },
+  { icon: FileText, title: 'ROPA Generator', desc: 'Auto-generate Record of Processing Activities compliant with GDPR Article 30' },
   { icon: Shield, title: 'DPIA-Lite', desc: 'Data Protection Impact Assessment tailored to your risk profile and industry' },
   { icon: AlertTriangle, title: 'Gap Analysis', desc: 'Rule-based checker that identifies compliance gaps and prioritizes actions' },
   { icon: MessageSquare, title: 'AI Assistant', desc: 'Ask compliance questions and get contextual answers based on your company data' },
@@ -27,7 +27,7 @@ export default function LandingPage() {
           <div className="w-8 h-8 rounded-lg gradient-brand flex items-center justify-center">
             <Shield className="w-4 h-4 text-white" />
           </div>
-          <span className="font-display font-bold text-lg">PDPL Shield</span>
+          <span className="font-display font-bold text-lg">GDPR Shield</span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-xs text-slate-500 bg-slate-800 px-3 py-1 rounded-full">Demo v1.0</span>
@@ -48,17 +48,17 @@ export default function LandingPage() {
         <div className="relative">
           <div className="inline-flex items-center gap-2 bg-brand-950/60 border border-brand-800/40 rounded-full px-4 py-1.5 mb-6 text-sm text-brand-300">
             <Zap className="w-3.5 h-3.5" />
-            Saudi Arabia PDPL Compliance — Automated
+            EU GDPR Compliance — Automated
           </div>
 
           <h1 className="font-display text-5xl md:text-6xl font-bold leading-tight mb-6">
-            PDPL compliance,{' '}
+            GDPR compliance,{' '}
             <span className="text-gradient">done in minutes</span>
           </h1>
 
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
             Generate ROPA, DPIA, Privacy Policies, and Risk Registers automatically.
-            Built for Saudi SMEs navigating the Personal Data Protection Law.
+            Built for EU SMEs navigating the General Data Protection Regulation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -113,14 +113,14 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* PDPL badges */}
+      {/* GDPR badges */}
       <section className="px-6 py-12 max-w-4xl mx-auto">
         <div className="glass rounded-2xl p-8 text-center">
-          <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">Covers all key PDPL requirements</p>
+          <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">Covers all key GDPR requirements</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            {['Art. 5 — Lawful Basis', 'Art. 8 — Consent', 'Art. 10 — Data Minimization',
-              'Art. 12 — ROPA', 'Art. 13 — Sensitive Data', 'Art. 17 — Security',
-              'Art. 18–25 — Data Subject Rights', 'Art. 29 — Cross-Border Transfers'].map(tag => (
+            {['Art. 6 — Lawful Basis', 'Art. 7 — Consent', 'Art. 5(1)(c) — Data Minimization',
+              'Art. 30 — ROPA', 'Art. 9 — Special Categories', 'Art. 32 — Security',
+              'Art. 12–23 — Data Subject Rights', 'Art. 44–49 — Cross-Border Transfers'].map(tag => (
               <span key={tag} className="text-xs bg-slate-800 text-slate-300 px-3 py-1.5 rounded-full flex items-center gap-1.5">
                 <CheckCircle className="w-3 h-3 text-brand-400" />
                 {tag}
@@ -131,7 +131,7 @@ export default function LandingPage() {
       </section>
 
       <footer className="border-t border-slate-800/60 px-6 py-8 text-center text-sm text-slate-600">
-        PDPL Shield — Demo Platform • Saudi Arabia Personal Data Protection Law (Royal Decree M/19, 2021)
+        GDPR Shield — Demo Platform • EU General Data Protection Regulation (Regulation (EU) 2016/679)
         <br />Not a substitute for legal advice. Consult a qualified legal professional for compliance matters.
       </footer>
     </div>
