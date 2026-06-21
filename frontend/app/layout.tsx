@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 
 export const metadata: Metadata = {
-  title: 'GDPR Shield — Compliance Platform',
-  description: 'EU GDPR compliance automation for SMEs',
+  title: 'PDPL Shield — Compliance Platform',
+  description: 'Saudi Arabia PDPL compliance automation for SMEs',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
