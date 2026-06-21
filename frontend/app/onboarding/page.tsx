@@ -20,7 +20,7 @@ export default function OnboardingPage() {
         third_party_vendors: [],
         processing_activities: '',
         employee_count: '',
-        country: 'EU',
+        country: 'Saudi Arabia',
     })
 
     const handleToggle = (list: keyof CompanyCreate, val: string) => {
@@ -60,8 +60,8 @@ export default function OnboardingPage() {
                     <Shield className="w-8 h-8 text-white" />
                 </div>
                 <Loader2 className="w-10 h-10 text-brand-500 animate-spin mb-4" />
-                <h1 className="text-2xl font-bold mb-2">Analyzing GDPR Compliance...</h1>
-                <p className="text-slate-400 max-w-sm">Generating ROPA, Policy, and Gap Analysis for {formData.name} based on GDPR Article 30 & 9.</p>
+                <h1 className="text-2xl font-bold mb-2">Analyzing PDPL Compliance...</h1>
+                <p className="text-slate-400 max-w-sm">Generating ROPA, Policy, and Gap Analysis for {formData.name} based on Saudi PDPL Article 12 & 13.</p>
             </div>
         )
     }
@@ -82,7 +82,7 @@ export default function OnboardingPage() {
                         <header>
                             <Building2 className="w-10 h-10 text-brand-400 mb-4" />
                             <h1 className="text-3xl font-bold mb-2">Tell us about your company</h1>
-                            <p className="text-slate-400">Basic details to tailor the GDPR assessment.</p>
+                            <p className="text-slate-400">Basic details to tailor the PDPL assessment.</p>
                         </header>
                         <div className="space-y-4">
                             <div>
@@ -92,7 +92,7 @@ export default function OnboardingPage() {
                                     value={formData.name}
                                     onChange={e => setFormData({ ...formData, name: e.target.value })}
                                     className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 focus:border-brand-500 outline-none transition-colors"
-                                    placeholder="e.g. EU Retail Solutions"
+                                    placeholder="e.g. Saudi Retail Solutions"
                                 />
                             </div>
                             <div>
@@ -127,7 +127,7 @@ export default function OnboardingPage() {
                         <header>
                             <Database className="w-10 h-10 text-brand-400 mb-4" />
                             <h1 className="text-3xl font-bold mb-2">What data do you handle?</h1>
-                            <p className="text-slate-400">GDPR requirements vary based on the sensitivity of data.</p>
+                            <p className="text-slate-400">PDPL requirements vary based on the sensitivity of data.</p>
                         </header>
                         <div className="grid gap-3">
                             {DATA_TYPES.map(type => (
