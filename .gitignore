@@ -26,6 +26,5 @@ dist/
 Thumbs.db
 
 # Env files
-.env
-.env.local
 .env.*.local
+config.bat
