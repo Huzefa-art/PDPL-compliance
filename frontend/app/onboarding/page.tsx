@@ -6,6 +6,7 @@ import { api, CompanyCreate } from '@/lib/api'
 
 const DATA_TYPES = ['PII (Names, IDs)', 'Financial Data', 'Health Records', 'Marketing Data', 'Biometric Data']
 const TOOLS = ['Cloud Hosting (AWS/Azure)', 'Email Marketing (Mailchimp)', 'CRM (Salesforce/Hubspot)', 'Payment Gateway (Stripe/Paytabs)', 'Google Analytics']
+const UNCERTAIN_OPTIONS = ["I don't understand", "I don't know"]
 
 export default function OnboardingPage() {
     const router = useRouter()
@@ -24,10 +25,16 @@ export default function OnboardingPage() {
 
     const handleToggle = (list: keyof CompanyCreate, val: string) => {
         const current = formData[list] as string[]
-        setFormData({
-            ...formData,
-            [list]: current.includes(val) ? current.filter(i => i !== val) : [...current, val]
-        })
+        const isSelected = current.includes(val)
+        let next: string[]
+        if (UNCERTAIN_OPTIONS.includes(val)) {
+            // "I don't know" / "I don't understand" are exclusive: they replace any real answer.
+            next = isSelected ? [] : [val]
+        } else {
+            const withoutUncertain = current.filter(i => !UNCERTAIN_OPTIONS.includes(i))
+            next = isSelected ? withoutUncertain.filter(i => i !== val) : [...withoutUncertain, val]
+        }
+        setFormData({ ...formData, [list]: next })
     }
 
     const handleSubmit = async () => {
@@ -135,6 +142,19 @@ export default function OnboardingPage() {
                                 </button>
                             ))}
                         </div>
+                        <div className="grid grid-cols-2 gap-3">
+                            {UNCERTAIN_OPTIONS.map(opt => (
+                                <button
+                                    key={opt}
+                                    onClick={() => handleToggle('data_types', opt)}
+                                    className={`flex items-center justify-between p-3 rounded-xl border border-dashed transition-all text-sm ${formData.data_types.includes(opt) ? 'border-amber-500 bg-amber-500/10 text-amber-300' : 'border-slate-700 text-slate-500 hover:text-slate-300 hover:bg-slate-900'
+                                        }`}
+                                >
+                                    <span className="font-medium">{opt}</span>
+                                    {formData.data_types.includes(opt) && <CheckCircle className="w-4 h-4 text-amber-500" />}
+                                </button>
+                            ))}
+                        </div>
                         <div className="flex gap-3 mt-8">
                             <button onClick={() => setStep(0)} className="flex-1 bg-slate-800 hover:bg-slate-700 py-4 rounded-xl transition-colors">Back</button>
                             <button onClick={() => setStep(2)} className="flex-[2] bg-brand-600 hover:bg-brand-500 text-white font-semibold py-4 rounded-xl">Next Step</button>
@@ -160,6 +180,19 @@ export default function OnboardingPage() {
                                 >
                                     <span className="font-medium text-sm text-left">{tool}</span>
                                     {formData.tools_used.includes(tool) && <CheckCircle className="w-5 h-5 text-brand-500" />}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="grid grid-cols-2 gap-3">
+                            {UNCERTAIN_OPTIONS.map(opt => (
+                                <button
+                                    key={opt}
+                                    onClick={() => handleToggle('tools_used', opt)}
+                                    className={`flex items-center justify-between p-3 rounded-xl border border-dashed transition-all text-sm ${formData.tools_used.includes(opt) ? 'border-amber-500 bg-amber-500/10 text-amber-300' : 'border-slate-700 text-slate-500 hover:text-slate-300 hover:bg-slate-900'
+                                        }`}
+                                >
+                                    <span className="font-medium">{opt}</span>
+                                    {formData.tools_used.includes(opt) && <CheckCircle className="w-4 h-4 text-amber-500" />}
                                 </button>
                             ))}
                         </div>
